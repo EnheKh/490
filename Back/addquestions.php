@@ -1,28 +1,61 @@
 
 <?php
-$conn = new mysqli("sql2.njit.edu", "es66", "bartok58", "es66");
-$classId=$_POST["classId"];
-$usertype=$_POST["usertype"];
+ $conn = new mysqli("sql2.njit.edu", "es66", "bartok58", "es66");
+//$classId=$_POST["classId"];
+//$usertype=$_POST["usertype"];
 $questionname=$_POST["questionName"];
-$questiontype=$_POST["Questiontype"];
+$questiontype=$_POST["questionType"];
+$answer=$_POST["answer"];
+$json=array();
+	//echo $_POST["questionName"];
+	//echo $_POST["questionType"];
+	//echo 
+	estiontype;
+	
 
 // questiontype 1=multiple choice, 2=true and false, 3=open end with one word length. 
 if( $questiontype==1)
 {
-	$question1=$_POST["Question1"];
+	$option1=$_POST["Opt1"];
+	$option2=$_POST["Opt2"];
+	$option3=$_POST["Opt3"];
+	$option4=$_POST["Opt4"];
+	//i will use this quesry later.
+	//$myquery = "INSERT INTO Questions (Question, Questiontype, Answers,option1,option2,option3,option4 ) VALUES ('".$questionname."','".$questiontype."','".$answer."','".$option1."''".$option2."''".$option3."''".$option4."')";
+	
+	/*$question1=$_POST["Question1"];
 	$question2=$_POST["Question2"];
 	$question3=$_POST["Question3"];
 	$question4=$_POST["Question4"];
-}
-if( $questiontype==2)
-{
-	//$questiont2=$_POST["Questiontype"];
+	*/
 	
+	$myquery = "INSERT INTO Questions (Question, QuestionType) VALUES ('".$questionname."','".$questiontype."')";
+	$result=$conn->query($myquery);
+	$json["message"]="success";
+	
+	
+	
+}
+
+if( $questiontype==2)
+{	// fix this later to add questions
+	//$myquery = "INSERT INTO Questions (Question, QuestionType, Answers) VALUES ('".$questionname."','".$questiontype."','".$answer."')";
+	$myquery = "INSERT INTO Questions (Question, QuestionType) VALUES ('".$questionname."','".$questiontype."')";
+	//$questiont2=$_POST["Questiontype"];
+	$result=$conn->query($myquery);
+	$json["message"]="success";
+	echo json_encode($json);
 }
 if( $questiontype==3)
 {
-	
+	$myquery = "INSERT INTO Questions (Question, QuestionType) VALUES ('".$questionname."','".$questiontype."')";
+	//$questiont2=$_POST["Questiontype"];
+	$result=$conn->query($myquery);
+	$json["message"]="success";
+	echo json_encode($json);
+	//echo "open";
 }
+/*
 $questionanswer = $_POST["questionanswer"];
 
 if($usertype == 1)
@@ -54,16 +87,6 @@ if($usertype == 1)
 		}
 	}
 }
+*/
 
-
-
-	/*
-echo  "{";
-{
-while($result2 = $result->fetch_assoc())
-	echo "{'testid':'".$result2["Id"]."','testname':'".$result2["TestName"]."'},";
-	
-}
-echo "}"; 
-//*/
 ?>
