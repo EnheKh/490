@@ -23,7 +23,7 @@ if( $questiontype==1)
 	$option4=$_POST["Opt4"];
 	//i will use this quesry later.
 	$myquery = "INSERT INTO QuestionsBank (Question, Questiontype, Answers,Opt1,Opt2,Opt3,Opt4,Weight ) VALUES ('".$questionname."','".$questiontype."','".$answer."','".$opption1."''".$option2."''".$option3."''".$option4."','".$weight."')";
-	
+	echo $myquery
 	/*$question1=$_POST["Question1"];
 	$question2=$_POST["Question2"];
 	$question3=$_POST["Question3"];
@@ -31,7 +31,7 @@ if( $questiontype==1)
 	*/
 	
 	//$myquery = "INSERT INTO Questions (Question, QuestionType) VALUES ('".$questionname."','".$questiontype."')";
-	$result=$conn->query($myquery);
+//	$result=$conn->query($myquery);
 	$json["message"]="success"; 
 	
 }
