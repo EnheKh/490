@@ -22,7 +22,7 @@ if( $questiontype==1)
 	$option3=$_POST["Opt3"];
 	$option4=$_POST["Opt4"];
 	//i will use this quesry later.
-	$myquery = "INSERT INTO QuestionsBank (Question, Questiontype, Answers,Opt1,Opt2,Opt3,Opt4,Weight ) VALUES ('".$questionname."','".$questiontype."','".$answer."','".$Opt1."''".$Opt2."''".$Opt3."''".$Opt4."','".$weight."')";
+	$myquery = "INSERT INTO QuestionsBank (Question, Questiontype, Answers,Opt1,Opt2,Opt3,Opt4,Weight ) VALUES ('".$questionname."','".$questiontype."','".$answer."','".$opption1."''".$option2."''".$option3."''".$option4."','".$weight."')";
 	
 	/*$question1=$_POST["Question1"];
 	$question2=$_POST["Question2"];
