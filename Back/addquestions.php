@@ -9,7 +9,7 @@ $answer=$_POST["answer"];
 $weight=$_POST["weight"]; 
 
 $json=array();
-echo "lewis"
+echo "lewis";
 
 	//echo $_POST["questionName"];
 	//echo $_POST["questionType"];
