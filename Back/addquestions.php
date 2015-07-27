@@ -9,12 +9,10 @@ $answer=$_POST["answer"];
 $weight=$_POST["weight"]; 
 
 $json=array();
-echo "lewis";
-
 	//echo $_POST["questionName"];
 	//echo $_POST["questionType"];
 	//echo questiontype;
-	
+	//echo "lewis";
 
 // questiontype 1=multiple choice, 2=true and false, 3=open end with one word length. 
 if( $questiontype==1)
@@ -23,20 +21,21 @@ if( $questiontype==1)
 	$option2=$_POST["Opt2"];
 	$option3=$_POST["Opt3"];
 	$option4=$_POST["Opt4"];
-	//i will use this quesry later.
-	//$myquery = "INSERT INTO QuestionsBank (Question, Questiontype, Answers,Opt1,Opt2,Opt3,Opt4,Weight ) VALUES ('".$questionname."','".$questiontype."','".$answer."','".$opption1."''".$option2."''".$option3."''".$option4."','".$weight."')";
-	//echo $myquery
+
+	//i will use this query later.
+	$myquery = "INSERT INTO QuestionBank (Question, Type, Answers,Opt1,Opt2,Opt3,Opt4,Weight ) VALUES ('".$questionname."','".$questiontype."','".$answer."','".$option1."''".$option2."''".$option3."''".$option4."','".$weight."')";
+	//echo $myquery;
 	/*$question1=$_POST["Question1"];
 	$question2=$_POST["Question2"];
 	$question3=$_POST["Question3"];
 	$question4=$_POST["Question4"];
 	*/
 	
-	//$myquery = "INSERT INTO Questions (Question, QuestionType) VALUES ('".$questionname."','".$questiontype."')";
-//	$result=$conn->query($myquery);
+	//$myquery = "INSERT INTO Questions (Question, Type) VALUES ('".$questionname."','".$questiontype."')";
+	$result=$conn->query($myquery);
 	$json["message"]="success"; 
-	
 }
+
 
 if( $questiontype==2)
 {	// fix this later to add questions
