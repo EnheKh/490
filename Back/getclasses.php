@@ -1,4 +1,4 @@
-
+  
 <?php
 $conn = new mysqli("sql2.njit.edu", "es66", "bartok58", "es66");
 $Id=$_POST["userId"];
@@ -9,7 +9,6 @@ echo  "{";
 while($result2 = $result->fetch_assoc())
 {
 	echo "{'classid':'".$result2["myclassid"]."','classname':'".$result2["myclassname"]."'},";
-	
 }
 echo "}"; 
 ?>

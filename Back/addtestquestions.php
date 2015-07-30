@@ -11,6 +11,4 @@ if($usertype == 1)
 	$result = $conn->query($myquery); 
 }
 
-
-
 ?>

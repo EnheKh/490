@@ -18,9 +18,6 @@ else
 {	$json["login"]="success";
 	$json["UserId"]=$result['Id'];
 	$json["Type"] = $result["Types"];
-	// add fiirst name 
-	// add last ; 
-	
 	
 	//echo "{\"login\":\"success\"}";
 }
